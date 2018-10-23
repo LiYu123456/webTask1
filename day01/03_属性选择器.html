@@ -1,0 +1,60 @@
+<!DOCType html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title></title>
+        <style type="text/css">
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            /*id为wrap的元素的子元素中div有name属性的元素*/
+            /* #wrap > div[name]{
+                border:1px solid black;
+            } */
+            /*id为wrap的元素的子元素中div有name属性且值为b1的元素*/
+            /* #wrap > div[name="b1"]{
+                border:1px solid black;
+            } */
+            /*id为wrap的元素的子元素中div有name属性且值中包含c2的元素*/
+            /*看元素3，它的name的值有多个，是个列表*/
+            /* #wrap > div[name~="c2"]{
+                border:1px solid black;
+            } */
+            /*id为wrap的元素的子元素中div有name属性且值为"d"或"d-开头"的元素*/
+            /* #wrap > div[name|="d"]{
+                border:1px solid black;
+            } */
+            /*id为wrap的元素的子元素中div有name属性且值为"d开头"或"d"的元素*/
+            /* #wrap > div[name^="d"]{
+                border:1px solid black;
+            } */
+            /*id为wrap的元素的子元素中div有name属性且值为"e结尾"或"e"的元素*/
+            /* #wrap > div[name$="e"]{
+                border:1px solid black;
+            } */
+            /*id为wrap的元素的子元素中div有name属性且值包含"f"的元素*/
+            #wrap > div[name*="f"]{
+                border:1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <div name="a1">1</div>
+            <span name="a2">kkkkk</span>
+            <div name="b1">2</div>
+            <div>gggg</div>
+            <div name="c1 c2 c3">3</div>
+            <div name="d-1">4</div>
+            <div name="d222">4</div>
+            <div name="d">4</div>
+            <div name="e1">5</div>
+            <div name="sdxs--e">5</div>
+            <div name="e1e">5</div>
+            <div name="f1">6</div>
+            <div name="2f">6</div>
+            <div name="f">6</div>
+        </div>
+    </body>
+</html>

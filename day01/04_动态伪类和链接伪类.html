@@ -1,0 +1,75 @@
+<!DOCType html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title></title>
+        <style type="text/css">
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            /*去掉超链接的下划线*/
+            a{
+                text-decoration: none;
+            }
+            /* link,visited,target为连接伪类，只有连接上可以用 */
+            /*未访问的链接*/
+            a:link{
+                color:magenta;
+            }
+            /* 访问过的链接 */
+            /*这个visited是通过比较缓存中点过的连接来进行区分的，如果有两个连接地址一样，
+            则点击一个，另一个也会显示被点过
+
+            visited中能其效果的CSS样式只有：color，background-color，
+            border-color三个属性，其他属性都不会起作用；
+            */
+            a:visited{
+                color:lawngreen;
+            }
+            /*hover和active是动态伪类*/
+            /* 鼠标移入时触发 */
+            a:hover{
+                color: blueviolet;
+            }
+            /* 摁下鼠标时触发 */
+            a:active{
+                color:red;
+            }
+            #wrap{
+                background:pink;
+            }
+            div{
+                width:200px;
+                height: 200px;
+                background-color: pink;
+                display: none;
+                text-align: center;
+                font: 50px/200px "微软雅黑";
+            }
+            /*点击超链接会有个锚点，可以用URI中的ID去找对应的div
+            如果在URI后面跟上"#div1"，也可以对div1执行target对应的css样式；
+            这个列子可以说明问题：target伪类可以用来追踪URI中的#后的内容为ID
+            找到ID对应的元素，执行target中的css样式；
+            */
+            :target{
+                display: block;
+            }
+        </style>
+    </head>
+    <body>
+        <a href="#">点我</a></br>
+        <!-- <a href="#div1">div1</a>
+        <a href="#div2">div2</a>
+        <a href="#div3">div3</a> -->
+        <div id="div1">
+            div1
+        </div>
+        <div id="div2">
+            div2
+        </div>
+        <div id="div3">
+            div3
+        </div>
+    </body>
+</html>
