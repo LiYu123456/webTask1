@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        /**
+        * clear：left;清除浮动的方式解决高度塌陷；
+        * 这种方式推荐使用，但是IE: 6;中不支持
+        */
+        
+        #div1 {
+            border: 1px solid;
+            zoom: 1;
+        }
+        
+        #div2 {
+            width: 200px;
+            height: 50px;
+            background-color: skyblue;
+            float: left;
+        }
+        /*
+        :::after是一个行内元素，因此需要转换成块元素
+        */
+        #div1::after {
+            content: "";
+            display: block;
+            clear: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div1">
+        <div id="div2"></div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        /**
+        * 用overflow:hidden;开启BFC，同时兼容IE6及以下版本，用zoom:1;开启hasLayout;
+        */
+        
+        #div1 {
+            border: 1px solid;
+            overflow: hidden;
+            zoom: 1;
+        }
+        
+        #div2 {
+            width: 200px;
+            height: 50px;
+            background-color: skyblue;
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div1">
+        <div id="div2"></div>
+    </div>
+</body>
+
+</html>
