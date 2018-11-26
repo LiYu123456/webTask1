@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            min-width: 600px;
+        }
+        #header,#footer{
+            background-color: gray;
+            text-align: center;
+            height: 100px;
+            line-height: 100px;
+        }
+        #content{
+            overflow: hidden;
+        }
+        #content .middle,#content .left,#content .right{
+            padding-bottom: 10000px;
+            margin-bottom: -10000px;
+        }
+        #content .middle{
+            background-color: pink;
+            float: left;
+            width: 100%;
+        }
+        #content .middle .middleInner{
+            padding: 0 200px;
+        }
+        #content .left{
+            float: left;
+            background-color: yellow;
+            width:200px;
+            margin-left: -100%;
+        }
+        #content .right{
+            float: left;
+            background-color: aquamarine;
+            width:200px;
+            margin-left: -200px;
+        }
+        .clearfix{
+            zoom: 1;
+        }
+        .clearfix::after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div id="header"> 
+        <h4>header</h4>
+    </div>
+    <div id="content" class="clearfix">
+        <div class="middle">
+            <div class="middleInner">middle</div>
+        </div>
+        <div class="left">left</div>
+        <div class="right">right</div>
+    </div>
+    <div id="footer">
+        <h4>footer</h4>
+    </div>
+</body>
+</html>
